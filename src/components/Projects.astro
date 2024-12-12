@@ -1,0 +1,82 @@
+---
+import Html from "./Icons/Html.astro";
+import Php from "./Icons/Php.astro";
+import Mysql from "./Icons/Mysql.astro";
+import SocialPill from "./SocialPill.astro";
+import GitHubIcon from '../components/Icons/GitHub.astro';
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-black text-white",
+        icon: Html,
+    },
+    PHP: {
+        name: "PHP",
+        class: "bg-[#003159] text-white",
+        icon: Php,
+    },
+    Mysql: {
+        name: "MYSQL",
+        class: "bg-[#003159] text-white",
+        icon: Mysql,
+    },
+};
+const PROJECTS = [
+    {
+        title: "Sistema de Tickets",
+        description:
+            "Sistema web para la generacion de tickets y reportar problemas con respecto al sistema de impresión",
+        link: "https://www.copiermastercyg.com.ec/inicio/ingresoSistema",
+        github: "https://github.com/klever747/webcopiermasterv2",
+        image: "../public/projects/tikets.webp",
+        tags: [TAGS.HTML, TAGS.PHP, TAGS.Mysql],
+    },
+    {
+        title: "Sistema de nutricion",
+        description:
+            "Sistema web para la generacion de consultas con el nutricionista y ademas pueda generar una dieta recomendada al paciente y poder llevar un mejor control y monitoreo por parte del nutricionista al paciente",
+        link: "https://www.copiermastercyg.com.ec/inicio/ingresoSistema",
+        github: "https://github.com/klever747/app-nutricion.git",
+        image: "../public/projects/login.png",
+        tags: [TAGS.HTML, TAGS.PHP, TAGS.Mysql],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ image, title, description, tags, github }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            
+            <ul class="flex gap-x-4 flex-row">
+                
+                {tags.map((tag) => (
+                    <li>
+                        <span
+                            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-1`}
+                        >
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </span>
+                       
+                    </li>
+                ))}
+               
+				
+				<SocialPill href={github}>
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
+				</SocialPill>
+				
+			
+            </ul>
+           
+            <img
+                class="rounded shadow-2xl shadow-white/10"
+                src={image}
+                alt={`captura de pantalla del proyecto ${image}`}
+            />
+        </article>
+    ))
+}

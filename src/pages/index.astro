@@ -1,0 +1,67 @@
+---
+import Badge from '../components/Badge.astro';
+import Layout from '../layouts/Layout.astro';
+import LinkedInIcon from '../components/Icons/LinkedIn.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GitHubIcon from '../components/Icons/GitHub.astro';
+import MailIcon from '../components/Icons/Mail.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Expirence from '../components/Expirence.astro';
+import Briefcase from '../components/Icons/Briefcase.astro';
+import CodeIcon from '../components/Icons/Code.astro';
+import Projects from '../components/Projects.astro';
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="Porfolio de Klever - Desarrollador y Programador web con 2 años de experiencia"
+>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-32">
+			<img 
+			class="rounded-full size-12 mb-4"
+			src="/public/img1.jpeg" alt="klever-photo"/>
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				Hey, soy Klever Pardo <a
+					href="https://www.linkedin.com/in/klever-pardo-711b01151"
+					target="_blank"
+					rel="noopener
+					class=flex justify-cengter items-center">
+					 <Badge>Disponible para trabajar</Badge>
+					 </a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-96[700px]">
+				<span>+2 años de experiencia.</span> <span class="text-yellow-200/90">Desarrollador Web.</span>
+				<span class="text-red-200/90"> De Quito Ecuador.</span>
+				<span class="opacity-75">Especializado en crear aplicaciones unicas.</span>
+			 </h2>
+			 <nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/klever-pardo-711b01151">
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/klever747">
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill href="">
+					<MailIcon class="size-4 md:size-6" />
+					kleverpardo747@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-4 lg:size-7"/>
+				Experiencia Laboral</h2>
+			<Expirence  /> 
+		</SectionContainer>
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-4 lg:size-7"/>
+				Proyectos</h2>
+			<Projects /> 
+		</SectionContainer>
+	</main>
+</Layout >
+
